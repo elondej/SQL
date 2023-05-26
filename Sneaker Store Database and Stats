@@ -1,0 +1,29 @@
+--Create a sneaker store database
+
+CREATE TABLE shoes (id INTEGER PRIMARY KEY, name TEXT, quantity_in_stock INTEGER, price_in_USD INTEGER, pairs_sold INTEGER);
+
+INSERT INTO shoes VALUES (1, "Jordan 1", 50, 200, 50);
+INSERT INTO shoes VALUES (2, "Jordan 2", 25, 180, 12);
+INSERT INTO shoes VALUES (3, "Jordan 3", 72, 210, 70);
+INSERT INTO shoes VALUES (4, "AF1 WHITE", 350, 90, 327);
+INSERT INTO shoes VALUES (5, "AF1 BLACK", 280, 90, 222);
+INSERT INTO shoes VALUES (6, "Jordan 4", 20, 200, 18);
+INSERT INTO shoes VALUES (7, "Jordan 5", 20, 200, 12);
+INSERT INTO shoes VALUES (8, "Jordan 6", 20, 200, 14);
+INSERT INTO shoes VALUES (9, "Jordan 7", 20, 210, 0);
+INSERT INTO shoes VALUES (10, "Jordan 8", 30, 225, 9);
+INSERT INTO shoes VALUES (11, "Jordan 9", 10, 150, 8);
+INSERT INTO shoes VALUES (12, "Jordan 10", 3,
+120, 2);
+INSERT INTO shoes VALUES (13, "Jordan 11", 88, 250, 88);
+INSERT INTO shoes VALUES (14, "Jordan 12", 33, 180, 30);
+INSERT INTO shoes VALUES (15, "Vans OLD SKOOL", 777, 60, 777);
+
+--Create table to visualize inventory, pairs in stock, price, and pairs sold
+SELECT * FROM shoes;
+
+--What are the retail prices from highest to lowest?
+SELECT * FROM shoes ORDER BY price_in_USD;
+
+--Which pair of sneakers is our most popular?
+SELECT MAX(pairs_sold) FROM shoes;
