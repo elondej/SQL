@@ -10,6 +10,12 @@ INSERT INTO singers (stage_name, age, nationality) VALUES ("Chance the Rapper", 
 INSERT INTO singers (stage_name, age, nationality) VALUES ("Central Cee", 24, "British");
 INSERT INTO singers (stage_name, age, nationality) VALUES ("Rod Wave", 23, "American");
 INSERT INTO singers (stage_name, age, nationality) VALUES ("Drake", 36, "Canadian");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Amine", 29, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Autumn!", 24, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Big Sean", 35, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("NBA Youngboy", 23, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Blxst", 30, "American");
+
 
 --Create table about the singers net worth and most popular song according to APPLE music
 CREATE TABLE wealth (id INTEGER PRIMARY KEY AUTOINCREMENT, singer_id INTEGER, net_worth_USD TEXT, popular_song TEXT);
@@ -19,9 +25,14 @@ INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (2, "25 Milli
 INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (3, "5 Million", "Doja");
 INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (4, "5 Million", "Street Runner");
 INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (5, "250 Million", "God's Plan");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (6, "3 Million", "Caroline");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (7, "2 Million", "One Way!");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (8, "30 Million", "Bounce Back");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (9, "6 Million", "Bandit");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (10, "5 Million", "Chosen");
 
---Joining both tables to find out what is each singers most popular song
-SELECT singers.stage_name, wealth.popular_song
+--Joining both tables to find out what is each singers net worth and most popular song
+SELECT singers.stage_name, wealth.net_worth_USD, wealth.popular_song
 FROM singers
 JOIN wealth
 ON singers.id = wealth.singer_id;
