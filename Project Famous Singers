@@ -1,0 +1,27 @@
+--Create table about the singers
+CREATE TABLE singers (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+stage_name TEXT,
+age INTEGER,
+nationality TEXT);
+
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Lil Uzi Vert", 27, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Chance the Rapper", 30, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Central Cee", 24, "British");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Rod Wave", 23, "American");
+INSERT INTO singers (stage_name, age, nationality) VALUES ("Drake", 36, "Canadian");
+
+--Create table about the singers net worth and most popular song according to APPLE music
+CREATE TABLE wealth (id INTEGER PRIMARY KEY AUTOINCREMENT, singer_id INTEGER, net_worth_USD TEXT, popular_song TEXT);
+
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (1, "25 Million", "XO TOUR Llif3");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (2, "25 Million", "No Problem");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (3, "5 Million", "Doja");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (4, "5 Million", "Street Runner");
+INSERT INTO wealth (singer_id, net_worth_USD, popular_song) VALUES (5, "250 Million", "God's Plan");
+
+--Joining both tables to find out what is each singers most popular song
+SELECT singers.stage_name, wealth.popular_song
+FROM singers
+JOIN wealth
+ON singers.id = wealth.singer_id;
